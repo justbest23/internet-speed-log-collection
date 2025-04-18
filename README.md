@@ -7,6 +7,8 @@ This repo contains lightweight shell scripts that log your internet speed over t
 
 Test results are stored in both raw `.log` format and structured `.csv` for analysis.
 
+
+## THIS IS UNTESTED ON WINDOWS, FEEDBACK IS APPRECIATED!
 ---
 
 ## 📁 Folder Structure
