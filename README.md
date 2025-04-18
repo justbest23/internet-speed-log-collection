@@ -34,7 +34,7 @@ These instructions allow you to run the scripts on a Windows machine using Git B
 2. Run:
 
 ```powershell
-irm https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/setup.ps1 | iex
+irm https://raw.githubusercontent.com/justbest23/internet-speed-log-collection/main/setup.ps1 | iex
 ```
 
 This will:
