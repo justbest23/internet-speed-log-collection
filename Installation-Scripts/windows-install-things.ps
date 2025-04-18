@@ -1,0 +1,18 @@
+# setup.ps1
+# Run this in PowerShell as Administrator
+
+Write-Output "Installing Chocolatey (if not already installed)..."
+Set-ExecutionPolicy Bypass -Scope Process -Force
+
+if (-Not (Get-Command choco -ErrorAction SilentlyContinue)) {
+    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
+    Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+}
+
+choco install -y git nodejs speedtest
+
+Write-Output "Installing fast-cli globally via npm..."
+npm install -g fast-cli
+
+Write-Output "Setup complete. You can now run the scripts using Git Bash:"
+Write-Output "`nRight click your .sh file and select 'Open with Git Bash' or run: bash run_fast.sh"
