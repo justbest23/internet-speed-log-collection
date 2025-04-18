@@ -1,7 +1,3 @@
-# internet-speed-log-collection
-Scripts that use Fast.com and Speedtest.net CLIs to gather and save results for logging
-
-
 # 📊 internet-speed-logs
 
 This repo contains lightweight shell scripts that log your internet speed over time using:
@@ -9,7 +5,7 @@ This repo contains lightweight shell scripts that log your internet speed over t
 - `fast-cli` (powered by Fast.com)
 - Ookla's official `speedtest` CLI
 
-Test results are stored in simple `.log` files which you can parse, visualise, or analyse however you like.
+Test results are stored in both raw `.log` format and structured `.csv` for analysis.
 
 ---
 
@@ -17,6 +13,8 @@ Test results are stored in simple `.log` files which you can parse, visualise, o
 
 ```
 internet-speed-logs/
+├── combined/
+│   └── internet_speeds.csv
 ├── logs/
 │   ├── fast_raw.log
 │   └── speedtest_raw.log
@@ -57,10 +55,13 @@ bash run_fast.sh
 bash run_speedtest.sh
 ```
 
-### 📄 Where Logs Are Stored
+### 📄 Where Logs and Results Are Stored
 
-- `logs/fast_raw.log`
-- `logs/speedtest_raw.log`
+- Raw output:
+  - `logs/fast_raw.log`
+  - `logs/speedtest_raw.log`
+- Combined CSV output (for charts, analysis, etc):
+  - `combined/internet_speeds.csv`
 
 > ⚠️ If you see permission errors, make sure Git Bash has write access, or run it as Administrator.
 
@@ -94,10 +95,13 @@ chmod +x run_fast.sh run_speedtest.sh
 ./run_speedtest.sh
 ```
 
-### 📄 Where Logs Are Stored
+### 📄 Where Logs and Results Are Stored
 
-- `logs/fast_raw.log`
-- `logs/speedtest_raw.log`
+- Raw logs:
+  - `logs/fast_raw.log`
+  - `logs/speedtest_raw.log`
+- Combined structured data:
+  - `combined/internet_speeds.csv`
 
 ---
 
@@ -149,8 +153,8 @@ You can use **Windows Task Scheduler** to run the scripts periodically.
 
 ## 🔒 Permissions Note
 
-- Ensure the user running the script has **write access** to the `logs/` folder.
-- Scripts will **append** to the log files, so make sure you rotate or clear logs occasionally if needed.
+- Ensure the user running the script has **write access** to the `logs/` and `combined/` folders.
+- Scripts will **append** to all log/CSV files. Rotate or back them up if needed.
 
 ---
 
